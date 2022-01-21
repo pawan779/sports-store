@@ -1,7 +1,7 @@
-.App {
-  text-align: center;
+.App{
+  margin: 0;
+  padding: 0;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,6 +27,118 @@
 .App-link {
   color: #61dafb;
 }
+.logo-img{
+  height: 45px; width: auto
+}
+.top-text{
+  color: #C5C5C5;
+  font-weight: bold;
+  font-size: 14px;
+}
+.menu-container{
+  background-color: "#fff";
+  height: 70px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction:  row;
+}
+.header-container{
+  background-color: #333333;
+          height: 40px;
+          line-height: 40px;
+          padding-left: 5%
+}
+.menu-item{
+  margin: 10px;
+  flex:1;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+.menu-item1{
+  flex: 1;
+  text-align: end;
+  padding-right: 5%;
+}
+.menu-item2{
+  padding-right: 3%;
+}
+
+.menu-icon{
+  color: #000;
+  font-size: x-large;
+}
+
+.menu-bar-icon{
+  display: none;
+  align-items: flex-end;
+  padding-right: 5%;
+}
+
+.menu-bar{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #bdbdbd;
+  position: absolute;
+  z-index: 9999;
+}
+
+.menu-bar-item{
+  margin: 10px;
+  flex:1;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.426);
+  padding-bottom: 5px;
+  padding-left: 2%;
+}
+.menu-text{
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Georgia
+}
+.menu-text:hover,.active-text,.active-text:hover{
+  color: #29ABA4;
+  font-weight: bold;
+  font-size: 16px;
+    font-family: Georgia,
+}
+
+.footer-container{
+  position:fixed;
+  width: 100%;
+  flex: 1;
+  display: none;
+  height: 60px;
+  background-color: #444444;
+  bottom: 0;
+  z-index: 9999;
+  border-top: 2px solid #565656;
+}
+.footer-divider{
+display:flex;
+flex:1;
+align-items:center;
+justify-content:space-between;
+}
+.footer-icon{
+  color: #fff;
+  font-size: xx-large;
+  align-self: center;
+
+}
+.footer-icon-container{
+  border-right: 2px solid #565656;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  height: 60px;
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +147,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media (max-width: 950px) {
+
+  .menu-item2,  .menu-item1{
+   display: none;
+  }
+  .menu-bar, .footer-container,.menu-bar-icon{
+    display: flex;
+  }
+  .logo-img{
+    height: 35px; width: auto
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .logo-img{
+    height: 30px; width: auto
+  }
+  .menu-container{
+    height: 50px;
+  }
+  .footer-container,.footer-icon-container{
+    height: 40px;
+  }
+  .footer-icon{
+    color: #fff;
+    font-size: x-large;
+    align-self: center;
+  }
+  .menu-text,.menu-text:hover,.active-text,.active-text:hover{
+
+    font-size: 14px;
+  }
+  .top-text{
+    font-size: 12px;
+  }
+
+
 }
