@@ -1,10 +1,23 @@
 import React from "react";
 
 import { Form, Input, Button, Checkbox } from "antd";
+import { Api } from "../constant";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const onFinish = (values) => {
+  const navigate = useNavigate();
+  console.log("route", navigate);
+  const onFinish = async (values) => {
     console.log("Success:", values);
+    try {
+      const response = await Api.login(values);
+      localStorage.setItem("token", response.data.token);
+      navigate("/", { replace: true });
+      alert("Login Success");
+    } catch (err) {
+      console.log(err.response.data.message);
+      alert(err.response.data.message);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -41,7 +54,7 @@ const Login = () => {
       >
         <Form.Item
           label="Email"
-          name="username"
+          name="email"
           rules={[
             {
               required: true,
@@ -49,7 +62,7 @@ const Login = () => {
             },
           ]}
         >
-          <Input size="large"  />
+          <Input size="large" />
         </Form.Item>
 
         <Form.Item

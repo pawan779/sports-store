@@ -28,7 +28,9 @@ const Header = () => {
       </div>
       <div className="menu-container">
         <div className="menu-item">
-          <img src={allImage.Icon} className="logo-img" />
+          <NavLink onClick={() => setIsMenuOpen(false)} to="/">
+            <img src={allImage.Icon} className="logo-img" />
+          </NavLink>
         </div>
         <div className="menu-item2">
           <NavLink
@@ -45,7 +47,7 @@ const Header = () => {
           <NavLink
             to="/shop"
             className={(navData) =>
-              navData.active ? "active-text" : "menu-text"
+              navData.isActive ? "active-text" : "menu-text"
             }
           >
             SHOP
@@ -174,6 +176,21 @@ const Header = () => {
               CONTACT
             </NavLink>
           </span>
+          {localStorage.getItem("token") && (
+            <span className="menu-bar-item">
+              <h4
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  localStorage.setItem("token", "");
+                }}
+                className={(navData) =>
+                  navData.isActive ? "active-text" : "menu-text"
+                }
+              >
+                LOGOUT
+              </h4>
+            </span>
+          )}
         </div>
       )}
     </div>
