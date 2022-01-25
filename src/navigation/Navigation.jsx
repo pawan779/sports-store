@@ -18,7 +18,7 @@ export default function Navigation() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/details" element={<ProductDetails />}></Route>
+        <Route path="/details/:id" element={<ProductDetails />}></Route>
         <Route path="/blog" element={<About />}></Route>
         <Route path="/pages" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>

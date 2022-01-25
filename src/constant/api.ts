@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://192.168.0.71:3001/";
+const baseUrl = "https://pawan779-push-notification.herokuapp.com/";
 axios.defaults.baseURL = baseUrl;
 
 const config = async () => {
